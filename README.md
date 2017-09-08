@@ -38,6 +38,8 @@ location you want data for:
   city.list.json.gz)
 * :cnt - number of days to forecast (only valid with
   wx-long-term-forecast).
+* :units - temperature units. Can be :imperial, :metric,
+  :kelvin. Defaults to :imperial.
 
 The data returned is returned as an alist, and is documented in the
 OpenWeatherMap API Documenation page, linked above.
