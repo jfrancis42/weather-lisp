@@ -22,8 +22,9 @@
 					  ((eq units :kelvin) "")
 					  (t "&units=imperial")))))
 	  (city-name
-	   (setf query (concatenate 'string "q=" city-name
-				    (if country-name (format nil ",~A" country-name) "")
+	   (setf query (concatenate 'string "q=" (drakma:url-encode city-name :latin-1)
+				    (if country-name (format nil ",~A"
+							     (drakma:url-encode country-name :latin-1)) "")
 				    (if (and cnt (equal type "daily")) (format nil "&cnt=~A" cnt) "")
 				    (cond ((eq units :imperial) "&units=imperial")
 					  ((eq units :metric) "&units=metric")
@@ -31,7 +32,8 @@
 					  (t "&units=imperial")))))
 	  (zip
 	   (setf query (concatenate 'string "zip=" (stringify zip)
-				    (if country-name (format nil ",~A" country-name) "")
+				    (if country-name (format nil ",~A"
+							     (drakma:url-encode country-name :latin-1)) "")
 				    (cond ((eq units :imperial) "&units=imperial")
 					  ((eq units :metric) "&units=metric")
 					  ((eq units :kelvin) "")
