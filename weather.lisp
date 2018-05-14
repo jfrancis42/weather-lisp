@@ -50,14 +50,23 @@
 			   "http://api.openweathermap.org/data/2.5/"
 			   type "?" query
 			   "&APPID=" (stringify api-key)))
-
-    (json:decode-json-from-string
-     (babel:octets-to-string
-      (first
-       (multiple-value-list
-	(drakma:http-request uri
-	 :method :get
-	 :accept "application/json")))))))
+    (handler-case
+	(json:decode-json-from-string
+	 (babel:octets-to-string
+	  (first
+	   (multiple-value-list
+	    (drakma:http-request uri
+				 :method :get
+				 :accept "application/json")))))
+      (sb-int:simple-stream-error ()
+	(format *error-output* "weather get-weather: stream error")
+	nil)
+      (usocket:ns-host-not-found-error ()
+	(format *error-output* "weather get-weather: nameserver failure")
+	nil)
+      (usocket:timeout-error ()
+	(format *error-output* "weather get-weather: server timeout failure")
+	nil))))
 
 (defun wx-current (api-key &key city-name country-name city-id lat lon zip (units :imperial))
   "Fetch current weather."
