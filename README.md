@@ -45,8 +45,8 @@ The data returned is returned as an alist, and is documented in the
 OpenWeatherMap API Documenation page, linked above.
 
 ````
-CL-USER> (weather:wx-current "a7f68048f03a2bb7ef0a6a2edf77a6af" :zip 98296)
-http://api.openweathermap.org/data/2.5/weather?zip=98296&APPID=a7f68048f03a2bb7ef0a6a2edf77a6af
+CL-USER> (weather:wx-current "a7f68058f03a2cb7af0a6a2edf77a6af" :zip 98296)
+http://api.openweathermap.org/data/2.5/weather?zip=98296&APPID=a7f68058f03a2cb7af0a6a2edf77a6af
 ((:COORD (:LON . -122.09) (:LAT . 47.86))
  (:WEATHER
   ((:ID . 711) (:MAIN . "Smoke") (:DESCRIPTION . "smoke") (:ICON . "50d"))
@@ -59,8 +59,8 @@ http://api.openweathermap.org/data/2.5/weather?zip=98296&APPID=a7f68048f03a2bb7e
  (:SYS (:TYPE . 1) (:ID . 2931) (:MESSAGE . 0.1356) (:COUNTRY . "US")
   (:SUNRISE . 1504791374) (:SUNSET . 1504838084))
  (:ID . 0) (:NAME . "Snohomish") (:COD . 200))
-CL-USER> (weather:wx-current "a7f68048f03a2bb7ef0a6a2edf77a6af" :city-name "snohomish" :country-name "us")
-http://api.openweathermap.org/data/2.5/weather?q=snohomish,us&APPID=a7f68048f03a2bb7ef0a6a2edf77a6af
+CL-USER> (weather:wx-current "a7f68058f03a2cb7af0a6a2edf77a6af" :city-name "snohomish" :country-name "us")
+http://api.openweathermap.org/data/2.5/weather?q=snohomish,us&APPID=a7f68058f03a2cb7af0a6a2edf77a6af
 ((:COORD (:LON . -122.1) (:LAT . 47.91))
  (:WEATHER
   ((:ID . 711) (:MAIN . "Smoke") (:DESCRIPTION . "smoke") (:ICON . "50d"))
@@ -73,8 +73,8 @@ http://api.openweathermap.org/data/2.5/weather?q=snohomish,us&APPID=a7f68048f03a
  (:SYS (:TYPE . 1) (:ID . 2924) (:MESSAGE . 0.0051) (:COUNTRY . "US")
   (:SUNRISE . 1504791373) (:SUNSET . 1504838090))
  (:ID . 5810988) (:NAME . "Snohomish") (:COD . 200))
-CL-USER> (weather:wx-current "a7f68048f03a2bb7ef0a6a2edf77a6af" :city-id 5810988)
-http://api.openweathermap.org/data/2.5/weather?id=5810988&APPID=a7f68048f03a2bb7ef0a6a2edf77a6af
+CL-USER> (weather:wx-current "a7f68058f03a2cb7af0a6a2edf77a6af" :city-id 5810988)
+http://api.openweathermap.org/data/2.5/weather?id=5810988&APPID=a7f68058f03a2cb7af0a6a2edf77a6af
 ((:COORD (:LON . -122.1) (:LAT . 47.91))
  (:WEATHER
   ((:ID . 711) (:MAIN . "Smoke") (:DESCRIPTION . "smoke") (:ICON . "50d"))
@@ -91,8 +91,8 @@ CL-USER>
 ````
 
 ````
-CL-USER> (weather:wx-short-term-forecast "a7f68048f03a2bb7ef0a6a2edf77a6af" :city-id 5810988)
-http://api.openweathermap.org/data/2.5/forecast?id=5810988&APPID=a7f68048f03a2bb7ef0a6a2edf77a6af
+CL-USER> (weather:wx-short-term-forecast "a7f68058f03a2cb7af0a6a2edf77a6af" :city-id 5810988)
+http://api.openweathermap.org/data/2.5/forecast?id=5810988&APPID=a7f68058f03a2cb7af0a6a2edf77a6af
 ((:COD . "200") (:MESSAGE . 0.0068) (:CNT . 40)
  (:LIST
   ((:DT . 1504818000)
